@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(238, 174, 202);
+  background: linear-gradient(
+    90deg,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+.todo-list {
+  padding: 50px;
+  border-radius: 25px;
+  background: rgb(34, 193, 195);
+  background: radial-gradient(
+    circle,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  box-shadow: 3px 3px 5px rgb(45, 45, 45);
+  width: 50%;
+  min-width: 300px;
+  max-width: 600px;
+  text-align: center;
+}
+h2 {
+  text-transform: uppercase;
+  color: rgb(91, 91, 91);
+  text-shadow: 1px 1px 1px rgb(168, 72, 16);
+  margin-bottom: 25px;
+}
+input[type="text"] {
+  background: linear-gradient(
+    90deg,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  border: none;
+  border-radius: 50px;
+  width: 90%;
+  padding: 10px 30px;
+  outline: none;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+input[type="text"]:focus {
+  box-shadow: 0 0 5px white;
+}
+ul li {
+  text-align: left;
+  list-style: none;
+  position: relative;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+ul li:hover {
+  text-shadow: 0px 0px 3px white;
+}
+ul li:before {
+  content: "\2731";
+  padding: 0.6rem;
+  font-size: 1.3rem;
+  color: orange;
+}
+ul li:after {
+  opacity: 0;
+}
+ul li:hover:after {
+  content: " (terminé)";
+  opacity: 0;
+  font-size: 1.1rem;
+  color: orange;
+  font-style: italic;
+  animation: pseudoClassAnim 1s forwards;
+}
+li.checked:before {
+  content: "\2714";
+  padding: 10px 10px;
+  font-size: 1.1rem;
+  color: orange;
+}
+li.checked:hover:after {
+  content: " (supprimer)";
+  font-size: 1.1rem;
+  color: orange;
+  opacity: 0;
+}
+@keyframes pseudoClassAnim {
+  to {
+    opacity: 1;
+  }
+}
